@@ -1,11 +1,6 @@
 // AI Service for generating content
 
-interface AIResponse {
-  content: string;
-  success: boolean;
-}
-
-export async function improveWithAI(text: string, type: 'bio' | 'project' | 'summary'): Promise<AIResponse> {
+export async function improveWithAI(text, type) {
   try {
     const prompts = {
       bio: `Improve this professional bio to make it more engaging and professional. Keep it concise (2-3 sentences): "${text}"`,
@@ -34,7 +29,7 @@ export async function improveWithAI(text: string, type: 'bio' | 'project' | 'sum
   }
 }
 
-export async function categorizeSkills(skills: string[]): Promise<Record<string, string[]>> {
+export async function categorizeSkills(skills) {
   try {
     const response = await fetch('/api/ai/categorize-skills', {
       method: 'POST',
@@ -52,7 +47,7 @@ export async function categorizeSkills(skills: string[]): Promise<Record<string,
   }
 }
 
-export async function generateProjectDescription(title: string, technologies: string[]): Promise<string> {
+export async function generateProjectDescription(title, technologies) {
   try {
     const response = await fetch('/api/ai/generate-project', {
       method: 'POST',
@@ -70,7 +65,7 @@ export async function generateProjectDescription(title: string, technologies: st
   }
 }
 
-export async function suggestImprovements(role: string, experience: any[]): Promise<string[]> {
+export async function suggestImprovements(role, experience) {
   try {
     const response = await fetch('/api/ai/suggest-improvements', {
       method: 'POST',

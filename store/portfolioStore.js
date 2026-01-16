@@ -1,24 +1,6 @@
-import { PortfolioData, PortfolioConfig } from '@/types';
 import { create } from 'zustand';
 
-interface PortfolioStore {
-  data: PortfolioData;
-  config: PortfolioConfig;
-  updatePersonalInfo: (info: Partial<PortfolioData['personalInfo']>) => void;
-  updateContact: (contact: Partial<PortfolioData['contact']>) => void;
-  updateSkills: (skills: PortfolioData['skills']) => void;
-  updateEducation: (education: PortfolioData['education']) => void;
-  updateExperience: (experience: PortfolioData['experience']) => void;
-  updateProjects: (projects: PortfolioData['projects']) => void;
-  updateConfig: (config: Partial<PortfolioConfig>) => void;
-  updateTheme: (theme: Partial<PortfolioConfig['theme']>) => void;
-  updateSections: (sections: Partial<PortfolioConfig['sections']>) => void;
-  updateSectionOrder: (order: string[]) => void;
-  loadSampleData: (data: PortfolioData) => void;
-  resetData: () => void;
-}
-
-const initialData: PortfolioData = {
+const initialData = {
   personalInfo: {
     fullName: '',
     title: '',
@@ -34,7 +16,7 @@ const initialData: PortfolioData = {
   projects: [],
 };
 
-const initialConfig: PortfolioConfig = {
+const initialConfig = {
   template: 'minimal',
   theme: {
     primary: '#3b82f6',
@@ -53,7 +35,7 @@ const initialConfig: PortfolioConfig = {
   sectionOrder: ['about', 'skills', 'experience', 'education', 'projects', 'contact'],
 };
 
-export const usePortfolioStore = create<PortfolioStore>((set) => ({
+export const usePortfolioStore = create((set) => ({
   data: initialData,
   config: initialConfig,
 

@@ -8,8 +8,8 @@ import AuthModal from '@/components/AuthModal';
 
 export default function Home() {
   const [showAuthModal, setShowAuthModal] = useState(false);
-  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
-  const [user, setUser] = useState<{ name?: string; email: string } | null>(null);
+  const [authMode, setAuthMode] = useState('login');
+  const [user, setUser] = useState(null);
   const [isFirstTimeVisitor, setIsFirstTimeVisitor] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Home() {
     }
   }, []);
 
-  const handleAuthSuccess = (userData: { name?: string; email: string }, wasSignup: boolean) => {
+  const handleAuthSuccess = (userData, wasSignup) => {
     setUser(userData);
     
     // If they just signed up, mark it
@@ -50,7 +50,7 @@ export default function Home() {
     }
   };
 
-  const openAuthModal = (mode?: 'login' | 'signup') => {
+  const openAuthModal = (mode) => {
     // Auto-detect mode based on visitor status if not specified
     if (!mode) {
       const hasSignedUp = localStorage.getItem('hasSignedUp');
@@ -275,7 +275,7 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function FeatureCard({ icon, title, description }) {
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
       <div className="mb-4">{icon}</div>
@@ -285,7 +285,7 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
   );
 }
 
-function StepCard({ number, title, description }: { number: string; title: string; description: string }) {
+function StepCard({ number, title, description }) {
   return (
     <div className="text-center">
       <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">

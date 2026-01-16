@@ -1,6 +1,4 @@
-import { PortfolioData } from '@/types';
-
-export const sampleData: PortfolioData = {
+export const sampleData = {
   personalInfo: {
     fullName: 'Mahesh Kumar',
     title: 'Full-Stack Developer & UI/UX Designer',

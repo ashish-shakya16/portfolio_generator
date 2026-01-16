@@ -6,7 +6,7 @@ import { saveAs } from 'file-saver';
 /**
  * Export portfolio as PDF
  */
-export async function exportToPDF(elementId: string, filename: string = 'portfolio.pdf'): Promise<void> {
+export async function exportToPDF(elementId, filename = 'portfolio.pdf') {
   const element = document.getElementById(elementId);
   if (!element) throw new Error('Element not found');
 
@@ -46,11 +46,11 @@ export async function exportToPDF(elementId: string, filename: string = 'portfol
  * Export portfolio as HTML/CSS/JS files in ZIP
  */
 export async function exportToHTML(
-  elementId: string,
-  data: any,
-  template: string,
-  filename: string = 'portfolio.zip'
-): Promise<void> {
+  elementId,
+  data,
+  template,
+  filename = 'portfolio.zip'
+) {
   const element = document.getElementById(elementId);
   if (!element) throw new Error('Element not found');
 
@@ -96,7 +96,7 @@ export async function exportToHTML(
 /**
  * Get inline styles for the template
  */
-function getInlineStyles(template: string): string {
+function getInlineStyles(template) {
   return `
     * {
       margin: 0;
@@ -148,7 +148,7 @@ function getInlineStyles(template: string): string {
 /**
  * Generate README for the exported portfolio
  */
-function generateReadme(data: any): string {
+function generateReadme(data) {
   return `# ${data.personalInfo.fullName} - Portfolio
 
 ## About
@@ -183,7 +183,7 @@ Generated on ${new Date().toLocaleDateString()}
 /**
  * Copy HTML to clipboard
  */
-export async function copyToClipboard(elementId: string): Promise<boolean> {
+export async function copyToClipboard(elementId) {
   const element = document.getElementById(elementId);
   if (!element) return false;
 
