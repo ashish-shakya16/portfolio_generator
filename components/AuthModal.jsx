@@ -3,15 +3,11 @@
 import { useState, useEffect } from 'react';
 import { FaTimes, FaUser, FaEnvelope, FaLock, FaSpinner } from 'react-icons/fa';
 
-interface AuthModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  mode: 'login' | 'signup';
-  onSuccess: (user: { name?: string; email: string }, wasSignup: boolean) => void;
+, wasSignup) => void;
 }
 
 export default function AuthModal({ isOpen, onClose, mode: initialMode, onSuccess }: AuthModalProps) {
-  const [mode, setMode] = useState<'login' | 'signup'>(initialMode);
+  const [mode, setMode] = useState(initialMode);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -64,7 +60,7 @@ export default function AuthModal({ isOpen, onClose, mode: initialMode, onSucces
       } else {
         // LOGIN FLOW - Validate against stored credentials
         const users = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
-        const user = users.find((u: any) => u.email === formData.email);
+        const user = users.find((u) => u.email === formData.email);
 
         if (!user) {
           alert('😅 No account found with this email. Please sign up first!');
@@ -105,7 +101,7 @@ export default function AuthModal({ isOpen, onClose, mode: initialMode, onSucces
     }
   };
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 

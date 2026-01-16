@@ -92,12 +92,12 @@ const sampleConfig = {
 };
 
 interface Template {
-  id: string;
-  name: string;
-  description: string;
+  id;
+  name;
+  description;
   component: React.ComponentType<any>;
-  preview: string;
-  features: string[];
+  preview;
+  features[];
 }
 
 const templates: Template[] = [
@@ -145,8 +145,8 @@ const templates: Template[] = [
 
 export default function TemplatesPage() {
   const router = useRouter();
-  const [selectedTemplate, setSelectedTemplate] = useState<string>('minimal');
-  const [previewTemplate, setPreviewTemplate] = useState<Template>(templates[0]);
+  const [selectedTemplate, setSelectedTemplate] = useState('minimal');
+  const [previewTemplate, setPreviewTemplate] = useState(templates[0]);
   const [isChecking, setIsChecking] = useState(true);
 
   // Check authentication

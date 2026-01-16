@@ -7,7 +7,7 @@ export default function ContactForm() {
   const { data, updateContact } = usePortfolioStore();
   const { contact } = data;
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = (field, value) => {
     updateContact({ [field]: value });
   };
 

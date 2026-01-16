@@ -9,9 +9,9 @@ import { generateProjectDescription } from '@/utils/aiService';
 export default function ProjectsForm() {
   const { data, updateProjects } = usePortfolioStore();
   const { projects } = data;
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [editingIndex, setEditingIndex] = useState(null);
   const [generating, setGenerating] = useState(false);
-  const [formData, setFormData] = useState<Project>({
+  const [formData, setFormData] = useState({
     id: '',
     title: '',
     description: '',
@@ -48,12 +48,12 @@ export default function ProjectsForm() {
     resetForm();
   };
 
-  const handleEdit = (index: number) => {
+  const handleEdit = (index) => {
     setFormData(projects[index]);
     setEditingIndex(index);
   };
 
-  const handleDelete = (index: number) => {
+  const handleDelete = (index) => {
     updateProjects(projects.filter((_, i) => i !== index));
   };
 
@@ -67,7 +67,7 @@ export default function ProjectsForm() {
     }
   };
 
-  const removeTechnology = (index: number) => {
+  const removeTechnology = (index) => {
     setFormData({
       ...formData,
       technologies: formData.technologies.filter((_, i) => i !== index),

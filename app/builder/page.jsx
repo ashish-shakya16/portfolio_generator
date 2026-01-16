@@ -17,14 +17,14 @@ import { FaArrowLeft, FaArrowRight, FaEye, FaDownload, FaUser } from 'react-icon
 import Link from 'next/link';
 import { sampleData } from '@/data/sampleData';
 
-type Step = 'personal' | 'skills' | 'education' | 'experience' | 'projects' | 'contact' | 'template' | 'customize' | 'preview';
+
 
 export default function BuilderPage() {
   const router = useRouter();
-  const [currentStep, setCurrentStep] = useState<Step>('personal');
+  const [currentStep, setCurrentStep] = useState('personal');
   const [showPreview, setShowPreview] = useState(false);
   const [showExport, setShowExport] = useState(false);
-  const [user, setUser] = useState<{ name?: string; email: string } | null>(null);
+  const [user, setUser] = useState(null);
   const [isChecking, setIsChecking] = useState(true);
   const loadSampleData = usePortfolioStore((state) => state.loadSampleData);
   const updateConfig = usePortfolioStore((state) => state.updateConfig);
@@ -68,7 +68,7 @@ export default function BuilderPage() {
     }
   }, [updateConfig]);
 
-  const steps: { id: Step; label: string; icon: string }[] = [
+  const steps: { id: Step; label; icon }[] = [
     { id: 'personal', label: 'Personal Info', icon: '👤' },
     { id: 'skills', label: 'Skills', icon: '💪' },
     { id: 'education', label: 'Education', icon: '🎓' },

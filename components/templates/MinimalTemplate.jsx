@@ -3,10 +3,7 @@
 import { PortfolioData, PortfolioConfig } from '@/types';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-interface TemplateProps {
-  data: PortfolioData;
-  config: PortfolioConfig;
-}
+
 
 export default function MinimalTemplate({ data, config }: TemplateProps) {
   const { personalInfo, contact, skills, education, experience, projects } = data;

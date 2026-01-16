@@ -9,9 +9,9 @@ import { improveWithAI } from '@/utils/aiService';
 export default function ExperienceForm() {
   const { data, updateExperience } = usePortfolioStore();
   const { experience } = data;
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [editingIndex, setEditingIndex] = useState(null);
   const [improvingDesc, setImprovingDesc] = useState(false);
-  const [formData, setFormData] = useState<Experience>({
+  const [formData, setFormData] = useState({
     id: '',
     company: '',
     position: '',
@@ -60,12 +60,12 @@ export default function ExperienceForm() {
     resetForm();
   };
 
-  const handleEdit = (index: number) => {
+  const handleEdit = (index) => {
     setFormData(experience[index]);
     setEditingIndex(index);
   };
 
-  const handleDelete = (index: number) => {
+  const handleDelete = (index) => {
     updateExperience(experience.filter((_, i) => i !== index));
   };
 
@@ -79,7 +79,7 @@ export default function ExperienceForm() {
     }
   };
 
-  const removeAchievement = (index: number) => {
+  const removeAchievement = (index) => {
     setFormData({
       ...formData,
       achievements: formData.achievements?.filter((_, i) => i !== index) || [],

@@ -5,14 +5,12 @@ import { usePortfolioStore } from '@/store/portfolioStore';
 import { exportToPDF, exportToHTML } from '@/utils/exportUtils';
 import { FaTimes, FaDownload, FaFilePdf, FaFileCode, FaSpinner } from 'react-icons/fa';
 
-interface ExportPanelProps {
-  onClose: () => void;
-}
+
 
 export default function ExportPanel({ onClose }: ExportPanelProps) {
   const { data, config } = usePortfolioStore();
   const [exporting, setExporting] = useState(false);
-  const [exportType, setExportType] = useState<'pdf' | 'html' | null>(null);
+  const [exportType, setExportType] = useState(null);
 
   const handleExportPDF = async () => {
     setExporting(true);

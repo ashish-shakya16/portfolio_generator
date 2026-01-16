@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function POST(request: NextRequest) {
+export async function POST(request) {
   try {
     const { role, experience } = await request.json();
 
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const experienceText = experience.map((exp: any) => 
+    const experienceText = experience.map((exp) => 
       `${exp.position} at ${exp.company} (${exp.duration}): ${exp.description}`
     ).join('\n');
 
@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
     const suggestions = JSON.parse(responseText);
 
     return NextResponse.json({ suggestions, success: true });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Suggestions error:', error);
     return NextResponse.json(
       { error: error.message || 'Failed to generate suggestions', success: false },

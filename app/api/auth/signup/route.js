@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+export async function POST(request) {
   try {
     const { name, email, password } = await request.json();
 
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     try {
       await fetch(`${request.headers.get('origin')}/api/send-welcome-email`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({ name, email }),
       });
     } catch (emailError) {
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       message: '🎉 Welcome aboard! Check your email for a warm welcome message!',
-      user: { name, email, password }, // In production, never send password!
+      user, // In production, never send password!
     });
   } catch (error) {
     console.error('Signup error:', error);

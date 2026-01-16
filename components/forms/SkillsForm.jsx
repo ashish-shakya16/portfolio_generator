@@ -11,7 +11,7 @@ export default function SkillsForm() {
   const { skills } = data;
   const [newSkill, setNewSkill] = useState('');
   const [categorizing, setCategorizing] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [message, setMessage] = useState(null);
 
   const categories = ['Frontend', 'Backend', 'Database', 'DevOps', 'Tools', 'Design', 'Soft Skills', 'Other'];
 
@@ -27,11 +27,11 @@ export default function SkillsForm() {
     }
   };
 
-  const removeSkill = (index: number) => {
+  const removeSkill = (index) => {
     updateSkills(skills.filter((_, i) => i !== index));
   };
 
-  const updateSkill = (index: number, field: keyof Skill, value: any) => {
+  const updateSkill = (index, field: keyof Skill, value) => {
     const updated = skills.map((skill, i) =>
       i === index ? { ...skill, [field]: value } : skill
     );
@@ -72,7 +72,7 @@ export default function SkillsForm() {
     }
   };
 
-  const addBulkSkills = (text: string) => {
+  const addBulkSkills = (text) => {
     const skillNames = text.split(',').map((s) => s.trim()).filter(Boolean);
     const newSkills: Skill[] = skillNames.map((name) => ({
       name,

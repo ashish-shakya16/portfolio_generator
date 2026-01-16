@@ -7,7 +7,7 @@ import { FaPalette, FaFont } from 'react-icons/fa';
 
 export default function CustomizationPanel() {
   const { config, updateTheme, updateSections } = usePortfolioStore();
-  const [showColorPicker, setShowColorPicker] = useState<string | null>(null);
+  const [showColorPicker, setShowColorPicker] = useState(null);
 
   const fonts = [
     { id: 'inter', name: 'Inter', preview: 'font-inter', description: 'Modern & Clean' },

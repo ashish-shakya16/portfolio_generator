@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request: NextRequest) {
+export async function POST(request) {
   try {
     const { prompt, text } = await request.json();
 
@@ -21,9 +21,7 @@ export async function POST(request: NextRequest) {
 
     const response = await fetch(apiUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: JSON.stringify({
         contents: [{
           parts: [{
@@ -51,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     console.log('Gemini Response received successfully');
     return NextResponse.json({ content: improvedText, success: true });
-  } catch (error: any) {
+  } catch (error) {
     console.error('AI improvement error:', error);
     console.error('Error details:', {
       message: error.message,

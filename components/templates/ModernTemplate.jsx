@@ -3,10 +3,7 @@
 import { PortfolioData, PortfolioConfig } from '@/types';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaExternalLinkAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
-interface TemplateProps {
-  data: PortfolioData;
-  config: PortfolioConfig;
-}
+
 
 export default function ModernTemplate({ data, config }: TemplateProps) {
   const { personalInfo, contact, skills, education, experience, projects } = data;
@@ -176,7 +173,7 @@ export default function ModernTemplate({ data, config }: TemplateProps) {
   );
 }
 
-function getSkillIcon(category?: string): string {
+function getSkillIcon(category?) {
   const icons: Record<string, string> = {
     Frontend: '🎨',
     Backend: '⚙️',

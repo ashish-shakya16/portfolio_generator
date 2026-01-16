@@ -25,7 +25,7 @@ const dancingScript = Dancing_Script({
   variable: '--font-dancing',
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'PortfolioAI - Build Your Dream Portfolio',
   description: 'Create professional portfolios with AI assistance',
   icons: {
@@ -36,8 +36,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
 }) {
   return (
     <html lang="en">

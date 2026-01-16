@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-export async function POST(request: Request) {
+export async function POST(request) {
   try {
     const { name, email } = await request.json();
 
@@ -127,14 +127,14 @@ The PortfolioAI Team
         message: 'Welcome email sent successfully!',
         emailId: data?.id,
       });
-    } catch (emailError: any) {
+    } catch (emailError) {
       console.error('❌ Email sending failed:', emailError);
       return NextResponse.json({
         success: false,
         message: 'Failed to send email: ' + emailError.message,
       }, { status: 500 });
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error('Email sending error:', error);
     return NextResponse.json(
       { success: false, message: 'Failed to send welcome email: ' + error.message },

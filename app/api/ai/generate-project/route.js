@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function POST(request: NextRequest) {
+export async function POST(request) {
   try {
     const { title, technologies } = await request.json();
 
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
     const description = completion.choices[0]?.message?.content || `${title} - A project built with ${technologies.join(', ')}`;
 
     return NextResponse.json({ description, success: true });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Project generation error:', error);
     return NextResponse.json(
       { error: error.message || 'Failed to generate description', success: false },

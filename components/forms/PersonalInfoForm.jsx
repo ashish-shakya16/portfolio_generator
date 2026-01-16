@@ -11,7 +11,7 @@ export default function PersonalInfoForm() {
   const [improving, setImproving] = useState(false);
   const [improvingTitle, setImprovingTitle] = useState(false);
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = (field, value) => {
     updatePersonalInfo({ [field]: value });
   };
 

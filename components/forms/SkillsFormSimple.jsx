@@ -20,18 +20,18 @@ export default function SkillsForm() {
     }
   };
 
-  const removeSkill = (index: number) => {
+  const removeSkill = (index) => {
     updateSkills(skills.filter((_, i) => i !== index));
   };
 
-  const updateSkill = (index: number, value: string) => {
+  const updateSkill = (index, value) => {
     const updated = skills.map((skill, i) =>
       i === index ? { name: value } : skill
     );
     updateSkills(updated);
   };
 
-  const addBulkSkills = (text: string) => {
+  const addBulkSkills = (text) => {
     const skillNames = text.split(',').map((s) => s.trim()).filter(Boolean);
     const newSkills: Skill[] = skillNames.map((name) => ({
       name,

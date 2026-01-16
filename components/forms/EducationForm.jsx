@@ -9,9 +9,9 @@ import { improveWithAI } from '@/utils/aiService';
 export default function EducationForm() {
   const { data, updateEducation } = usePortfolioStore();
   const { education } = data;
-  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+  const [editingIndex, setEditingIndex] = useState(null);
   const [improvingDesc, setImprovingDesc] = useState(false);
-  const [formData, setFormData] = useState<Education>({
+  const [formData, setFormData] = useState({
     id: '',
     institution: '',
     degree: '',
@@ -65,12 +65,12 @@ export default function EducationForm() {
     resetForm();
   };
 
-  const handleEdit = (index: number) => {
+  const handleEdit = (index) => {
     setFormData(education[index]);
     setEditingIndex(index);
   };
 
-  const handleDelete = (index: number) => {
+  const handleDelete = (index) => {
     updateEducation(education.filter((_, i) => i !== index));
   };
 

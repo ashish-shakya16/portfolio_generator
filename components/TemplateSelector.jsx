@@ -45,7 +45,7 @@ const templates: Template[] = [
 export default function TemplateSelector() {
   const { config, updateConfig } = usePortfolioStore();
 
-  const selectTemplate = (templateId: string) => {
+  const selectTemplate = (templateId) => {
     console.log('Selecting template:', templateId);
     updateConfig({ template: templateId });
   };
@@ -98,7 +98,7 @@ export default function TemplateSelector() {
   );
 }
 
-function getTemplateEmoji(category: string): string {
+function getTemplateEmoji(category) {
   const emojis: Record<string, string> = {
     minimal: '📄',
     modern: '🎨',

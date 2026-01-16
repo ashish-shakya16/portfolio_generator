@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function POST(request: NextRequest) {
+export async function POST(request) {
   try {
     const { skills } = await request.json();
 
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     const categories = JSON.parse(responseText);
 
     return NextResponse.json({ categories, success: true });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Skill categorization error:', error);
     return NextResponse.json(
       { error: error.message || 'Failed to categorize skills', success: false },
