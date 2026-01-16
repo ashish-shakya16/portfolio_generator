@@ -1,0 +1,40 @@
+{
+  "name": "ai-portfolio-generator",
+  "version": "1.0.0",
+  "description": "AI-powered portfolio generator with multiple templates",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "jszip": "^3.10.1",
+    "next": "^14.0.4",
+    "openai": "^4.104.0",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-colorful": "^5.6.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "resend": "^3.2.0",
+    "zustand": "^5.0.10"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.46",
+    "@types/react-beautiful-dnd": "^13.1.8",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3"
+  }
+}
