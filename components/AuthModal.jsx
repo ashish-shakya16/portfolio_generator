@@ -3,10 +3,7 @@
 import { useState, useEffect } from 'react';
 import { FaTimes, FaUser, FaEnvelope, FaLock, FaSpinner } from 'react-icons/fa';
 
-, wasSignup) => void;
-}
-
-export default function AuthModal({ isOpen, onClose, mode: initialMode, onSuccess }: AuthModalProps) {
+export default function AuthModal({ isOpen, onClose, mode: initialMode, onSuccess }) {
   const [mode, setMode] = useState(initialMode);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -22,7 +19,7 @@ export default function AuthModal({ isOpen, onClose, mode: initialMode, onSucces
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
