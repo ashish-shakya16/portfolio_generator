@@ -11,7 +11,7 @@ export default function SkillsForm() {
 
   const addSkill = () => {
     if (newSkill.trim()) {
-      const skill: Skill = {
+      const skill = {
         name: newSkill.trim(),
       };
       updateSkills([...skills, skill]);
@@ -32,7 +32,7 @@ export default function SkillsForm() {
 
   const addBulkSkills = (text) => {
     const skillNames = text.split(',').map((s) => s.trim()).filter(Boolean);
-    const newSkills: Skill[] = skillNames.map((name) => ({
+    const newSkills = skillNames.map((name) => ({
       name,
     }));
     updateSkills([...skills, ...newSkills]);

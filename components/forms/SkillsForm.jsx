@@ -16,7 +16,7 @@ export default function SkillsForm() {
 
   const addSkill = () => {
     if (newSkill.trim()) {
-      const skill: Skill = {
+      const skill = {
         name: newSkill.trim(),
         category: 'Other',
         level: 70,
@@ -30,7 +30,7 @@ export default function SkillsForm() {
     updateSkills(skills.filter((_, i) => i !== index));
   };
 
-  const updateSkill = (index, field: keyof Skill, value) => {
+  const updateSkill = (index, field, value) => {
     const updated = skills.map((skill, i) =>
       i === index ? { ...skill, [field]: value } : skill
     );
@@ -73,7 +73,7 @@ export default function SkillsForm() {
 
   const addBulkSkills = (text) => {
     const skillNames = text.split(',').map((s) => s.trim()).filter(Boolean);
-    const newSkills: Skill[] = skillNames.map((name) => ({
+    const newSkills = skillNames.map((name) => ({
       name,
       category: 'Other',
       level: 70,
