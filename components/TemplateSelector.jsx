@@ -1,10 +1,9 @@
 'use client';
 
 import { usePortfolioStore } from '@/store/portfolioStore';
-import { Template } from '@/types';
 import { FaCheck } from 'react-icons/fa';
 
-const templates: Template[] = [
+const templates = [
   {
     id: 'minimal',
     name: 'Minimal Clean',
