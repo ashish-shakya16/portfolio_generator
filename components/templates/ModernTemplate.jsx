@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaExternalLinkAlt, FaMapMark
 
 
 
-export default function ModernTemplate({ data, config }: TemplateProps) {
+export default function ModernTemplate({ data, config }) {
   const { personalInfo, contact, skills, education, experience, projects } = data;
   const fontClass = `font-${config.theme.font}`;
 

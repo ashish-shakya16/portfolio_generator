@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaExternalLinkAlt } from 're
 
 
 
-export default function DarkTemplate({ data, config }: TemplateProps) {
+export default function DarkTemplate({ data, config }) {
   const { personalInfo, contact, skills, education, experience, projects } = data;
   const fontClass = `font-${config.theme.font}`;
 
