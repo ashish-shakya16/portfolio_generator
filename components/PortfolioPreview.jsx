@@ -35,7 +35,7 @@ export default function PortfolioPreview() {
         '--color-primary': config.theme.primary,
         '--color-secondary': config.theme.secondary,
         '--color-accent': config.theme.accent,
-      } as React.CSSProperties}
+      }}
     >
       {renderTemplate()}
     </div>

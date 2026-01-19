@@ -169,7 +169,7 @@ export default function CustomizationPanel() {
             <label key={section.id} className="flex items-center gap-3 cursor-pointer">
               <input
                 type="checkbox"
-                checked={config.sections[section.id as keyof typeof config.sections]}
+                checked={config.sections[section.id]}
                 onChange={(e) => updateSections({ [section.id]: e.target.checked })}
                 className="w-5 h-5 text-blue-600 rounded"
               />

@@ -141,7 +141,7 @@ export default function SkillsForm() {
               />
               <button
                 onClick={() => {
-                  const input = document.getElementById('bulk-skills-input') as HTMLInputElement;
+                  const input = document.getElementById('bulk-skills-input');
                   if (input && input.value.trim()) {
                     const count = addBulkSkills(input.value);
                     input.value = '';
