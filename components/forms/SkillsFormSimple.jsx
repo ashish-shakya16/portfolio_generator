@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { usePortfolioStore } from '@/store/portfolioStore';
-import { Skill } from '@/types';
 import { FaPlus, FaTimes, FaLightbulb } from 'react-icons/fa';
 
 export default function SkillsForm() {

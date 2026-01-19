@@ -1,6 +1,4 @@
 'use client';
-
-import { PortfolioData, PortfolioConfig } from '@/types';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 

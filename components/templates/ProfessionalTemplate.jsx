@@ -1,6 +1,4 @@
 'use client';
-
-import { PortfolioData, PortfolioConfig } from '@/types';
 import MinimalTemplate from './MinimalTemplate';
 
 

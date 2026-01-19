@@ -1,6 +1,4 @@
 'use client';
-
-import { PortfolioData, PortfolioConfig } from '@/types';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaExternalLinkAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 
@@ -173,8 +171,8 @@ export default function ModernTemplate({ data, config }: TemplateProps) {
   );
 }
 
-function getSkillIcon(category?) {
-  const icons: Record<string, string> = {
+function getSkillIcon(category) {
+  const icons = {
     Frontend: '🎨',
     Backend: '⚙️',
     Database: '🗄️',

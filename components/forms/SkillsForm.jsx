@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { usePortfolioStore } from '@/store/portfolioStore';
-import { Skill } from '@/types';
 import { FaPlus, FaTimes, FaMagic, FaCheckCircle, FaExclamationCircle, FaLightbulb, FaRocket } from 'react-icons/fa';
 import { categorizeSkills } from '@/utils/aiService';
 

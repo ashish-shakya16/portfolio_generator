@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { usePortfolioStore } from '@/store/portfolioStore';
-import { Experience } from '@/types';
 import { FaPlus, FaTimes, FaEdit, FaMagic } from 'react-icons/fa';
 import { improveWithAI } from '@/utils/aiService';
 
