@@ -31,7 +31,7 @@ export async function POST(request) {
     // Email content
     const emailContent = {
       to: email,
-      from: 'noreply@portfolioai.com',
+      from: 'onboarding@resend.dev', // Using Resend's test domain
       subject: '🎉 Welcome to PortfolioAI!',
       html: `
         <!DOCTYPE html>
