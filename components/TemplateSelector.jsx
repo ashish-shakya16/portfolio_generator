@@ -98,7 +98,7 @@ export default function TemplateSelector() {
 }
 
 function getTemplateEmoji(category) {
-  const emojis: Record<string, string> = {
+  const emojis = {
     minimal: '📄',
     modern: '🎨',
     dark: '🌙',
