@@ -91,16 +91,7 @@ const sampleConfig = {
   sectionOrder: ['about', 'skills', 'experience', 'education', 'projects', 'contact'],
 };
 
-interface Template {
-  id;
-  name;
-  description;
-  component: React.ComponentType<any>;
-  preview;
-  features[];
-}
-
-const templates: Template[] = [
+const templates = [
   {
     id: 'minimal',
     name: 'Minimal',
@@ -164,7 +155,7 @@ export default function TemplatesPage() {
     }
   }, [router]);
 
-  const handleSelectTemplate = (template: Template) => {
+  const handleSelectTemplate = (template) => {
     setSelectedTemplate(template.id);
     setPreviewTemplate(template);
   };

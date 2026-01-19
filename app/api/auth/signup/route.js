@@ -42,7 +42,7 @@ export async function POST(request) {
     try {
       await fetch(`${request.headers.get('origin')}/api/send-welcome-email`, {
         method: 'POST',
-        headers,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email }),
       });
     } catch (emailError) {
@@ -53,7 +53,6 @@ export async function POST(request) {
     return NextResponse.json({
       success: true,
       message: '🎉 Welcome aboard! Check your email for a warm welcome message!',
-      user, // In production, never send password!
     });
   } catch (error) {
     console.error('Signup error:', error);

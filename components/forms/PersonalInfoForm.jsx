@@ -53,12 +53,12 @@ export default function PersonalInfoForm() {
     }
   };
 
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoUpload = (e) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        updatePersonalInfo({ profilePhoto: reader.result as string });
+        updatePersonalInfo({ profilePhoto: reader.result });
       };
       reader.readAsDataURL(file);
     }

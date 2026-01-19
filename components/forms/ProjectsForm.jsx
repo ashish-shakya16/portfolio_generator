@@ -36,7 +36,7 @@ export default function ProjectsForm() {
     setEditingIndex(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (editingIndex !== null) {
       const updated = [...projects];

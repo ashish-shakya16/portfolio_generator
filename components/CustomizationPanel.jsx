@@ -146,7 +146,7 @@ export default function CustomizationPanel() {
           {fonts.map((font) => (
             <button
               key={font.id}
-              onClick={() => updateTheme({ font: font.id as any })}
+              onClick={() => updateTheme({ font: font.id })}
               className={`p-5 rounded-xl border-2 transition-all hover:shadow-lg ${
                 config.theme.font === font.id
                   ? 'border-blue-600 bg-blue-50 shadow-md'

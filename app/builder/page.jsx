@@ -68,7 +68,7 @@ export default function BuilderPage() {
     }
   }, [updateConfig]);
 
-  const steps: { id: Step; label; icon }[] = [
+  const steps = [
     { id: 'personal', label: 'Personal Info', icon: '👤' },
     { id: 'skills', label: 'Skills', icon: '💪' },
     { id: 'education', label: 'Education', icon: '🎓' },
